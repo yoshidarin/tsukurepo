@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">tsukurepo</string>
+
+    <!-- 作成画面 start -->
+    <string name="work_content_title">今週の作業内容</string>
+    <string name="work_content_sample">お問い合わせ対応</string>
+    <string name="work_time_this_week">今週の作業時間</string>
+    <string name="work_time_next_week">来週の作業時間</string>
+    <string name ="comment_change_title">コメントの変更</string>
+    <string name="comment_change_announce">コメントを入力してください。</string>
+    <string name="comment_sample">通常勤務</string>
+    <!-- 作成画面 end -->
+    <!-- 共通ボタン start -->
+    <string name="cancel">キャンセル</string>
+    <string name="ok">OK</string>
+    <!-- 共通ボタン end -->
+
 </resources>
