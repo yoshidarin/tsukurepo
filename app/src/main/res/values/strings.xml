@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">tsukurepo</string>
 
+    <string name="recently">最近</string>
+    <string name="calendar">カレンダー</string>
     <!-- 作成画面 start -->
     <string name="work_content_title">今週の作業内容</string>
     <string name="work_content_sample">お問い合わせ対応</string>

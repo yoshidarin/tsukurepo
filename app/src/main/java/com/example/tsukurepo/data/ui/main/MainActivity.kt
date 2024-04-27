@@ -23,8 +23,14 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        findViewById<Button>(R.id.save_button).setOnClickListener {
-            viewModel.insert()
-        }
+
+        // MainFragmentを開く
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container_main, MainFragment.newInstance(viewModel))
+            .commit()
+
+//        findViewById<Button>(R.id.save_button).setOnClickListener {
+//            viewModel.insert()
+//        }
     }
 }
