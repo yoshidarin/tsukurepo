@@ -1,4 +1,4 @@
-package com.example.tsukurepo.Data.ui.main
+package com.example.tsukurepo.data.ui.main
 
 import android.os.Bundle
 import android.widget.Button

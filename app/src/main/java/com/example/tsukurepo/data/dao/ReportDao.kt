@@ -1,11 +1,10 @@
-package com.example.tsukurepo.Data.dao
+package com.example.tsukurepo.data.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
-import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Upsert
-import com.example.tsukurepo.Data.entities.ReportEntity
+import com.example.tsukurepo.data.entities.ReportEntity
 
 @Dao
 interface ReportDao {

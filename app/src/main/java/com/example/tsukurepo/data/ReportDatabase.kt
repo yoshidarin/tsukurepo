@@ -1,11 +1,11 @@
-package com.example.tsukurepo.Data
+package com.example.tsukurepo.data
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.tsukurepo.Data.dao.ReportDao
-import com.example.tsukurepo.Data.entities.ReportEntity
+import com.example.tsukurepo.data.dao.ReportDao
+import com.example.tsukurepo.data.entities.ReportEntity
 
 @Database(entities = [ReportEntity::class], version = 1, exportSchema = false) // 使用するEntityを指定
 abstract class ReportDatabase : RoomDatabase() {
