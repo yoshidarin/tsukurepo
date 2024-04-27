@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_weight="1.2"
+        android:layout_height="match_parent"
+        android:background="@color/background_color">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="04月16日(火)"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/font_color"
+            >
+        </TextView>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/work_start_time"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="09:00"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/font_color"
+            >
+        </TextView>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="24dp"
+        android:layout_height="match_parent"
+        android:background="@color/background_color">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="~"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/font_color"
+            >
+        </TextView>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/work_end_time"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="15:00"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/font_color"
+            >
+        </TextView>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/comment"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:background="@color/background_color">
+
+        <ImageView
+            android:src="@drawable/comment_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            >
+        </ImageView>
+
+    </FrameLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -5,5 +5,6 @@
     <color name="primary_color">#DAC6D9</color>
     <color name="secondary_color">#98BCDF</color>
     <color name="background_color">#F2EEEC</color>
+    <color name="font_color">#3D3D3D</color>
 
 </resources>
