@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="24dp"
+    android:background="@color/secondary_color"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/work_item_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/work_time_this_week"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginStart="16dp">
+    </TextView>
+
+
+</FrameLayout>
