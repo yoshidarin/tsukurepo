@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.tsukurepo.R
+import com.example.tsukurepo.data.ui.createReport.CreateReportFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,5 +33,13 @@ class MainActivity : AppCompatActivity() {
 //        findViewById<Button>(R.id.save_button).setOnClickListener {
 //            viewModel.insert()
 //        }
+    }
+
+    fun moveToCreateReportFragment() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container_main, CreateReportFragment.newInstance(viewModel))
+            .addToBackStack(null)
+            .commit()
+
     }
 }
