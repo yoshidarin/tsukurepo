@@ -1,4 +1,4 @@
-package com.example.tsukurepo.data.ui.currentWeek
+package com.example.tsukurepo.ui.currentWeek
 
 import android.content.Context
 import android.os.Bundle
@@ -13,10 +13,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tsukurepo.R
 import com.example.tsukurepo.data.ReportData
-import com.example.tsukurepo.data.ui.adapter.CurrentWeekAdapter
-import com.example.tsukurepo.data.ui.calender.CalenderFragment
-import com.example.tsukurepo.data.ui.main.MainActivity
+import com.example.tsukurepo.ui.adapter.CurrentWeekAdapter
+import com.example.tsukurepo.ui.calender.CalenderFragment
+import com.example.tsukurepo.ui.main.MainActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.util.Calendar
 
 class CurrentWeekFragment : Fragment(){
 
@@ -39,8 +40,8 @@ class CurrentWeekFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return LayoutInflater.from(requireContext()).inflate(
-            R.layout.fragment_current_week, container, false)
+        return LayoutInflater.from(requireContext())
+            .inflate(R.layout.fragment_current_week, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -61,7 +62,6 @@ class CurrentWeekFragment : Fragment(){
         }
         val ediBtn = view.findViewById<FloatingActionButton>(R.id.edit_button)
         ediBtn.setOnClickListener{
-            Log.d("click","click!!")
             mainActivity?.moveToCreateReportFragment()
 
         }
@@ -78,15 +78,17 @@ class CurrentWeekFragment : Fragment(){
     //RecyclerViewの生成時に一度だけ動く
     private fun generateItemList(): List<ReportData> {
         val itemList = mutableListOf<ReportData>()
+        val calendar = Calendar.getInstance()
+        calendar.set(2024,4,1)
+        val instant = calendar.time.toInstant()
         for(i in 1..7){
             itemList.add(
                 ReportData(
-                    id = i, startDate = "04月01日(日)", workDetails = "週報",
+                    id = i, startDate = instant, workDetails = "週報",
                     impression = "2024/04/03 19:00"
                 )
             )
         }
-
         return itemList
     }
 

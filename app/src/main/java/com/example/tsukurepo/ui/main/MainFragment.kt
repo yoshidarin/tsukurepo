@@ -1,4 +1,4 @@
-package com.example.tsukurepo.data.ui.main
+package com.example.tsukurepo.ui.main
 
 import android.os.Bundle
 import android.util.Log
@@ -9,9 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.example.tsukurepo.R
-import com.example.tsukurepo.data.ui.calender.CalenderFragment
-import com.example.tsukurepo.data.ui.currentWeek.CurrentWeekFragment
-import com.example.tsukurepo.data.util.MainMenuTab
+import com.example.tsukurepo.ui.calender.CalenderFragment
+import com.example.tsukurepo.ui.currentWeek.CurrentWeekFragment
+import com.example.tsukurepo.util.MainMenuTab
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -51,7 +51,7 @@ class MainFragment(private val viewModel: MainViewModel) : Fragment() {
 }
 
 private class ReportPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
-    override fun getItemCount() = 2
+    override fun getItemCount() = MainMenuTab.values().size
 
     override fun createFragment(position: Int) =
         if (position == 0) CurrentWeekFragment.newInstance()

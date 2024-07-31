@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/work_items_view"
+            android:id="@+id/create_report_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -20,46 +20,40 @@
 
         <TextView
             android:background="@color/secondary_color"
-            android:id="@+id/work_details_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="業務内容"
+            android:text="@string/work_details"
             android:textColor="@color/white"
             android:textSize="12sp"
             android:textStyle="bold"
             >
         </TextView>
-        <EditText
-            android:id="@+id/impression_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="aiueo"
-            android:inputType="textMultiLine">
-
-        </EditText>
-
-        <TextView
-            android:background="@color/secondary_color"
-            android:id="@+id/impression_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="所感"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            >
-        </TextView>
-
         <EditText
             android:id="@+id/work_details_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="今週もよろしくお願いいたします。"
-            android:inputType="textMultiLine">
+            tools:text="aiueo"
+            android:inputType="textMultiLine"/>
 
-        </EditText>
+        <TextView
+            android:background="@color/secondary_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/impressions"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:id="@+id/impression_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            tools:text="今週もよろしくお願いいたします。"
+            android:inputType="textMultiLine"/>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </ScrollView>

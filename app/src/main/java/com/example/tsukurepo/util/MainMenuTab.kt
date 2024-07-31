@@ -1,4 +1,4 @@
-package com.example.tsukurepo.data.util
+package com.example.tsukurepo.util
 
 import com.example.tsukurepo.R
 

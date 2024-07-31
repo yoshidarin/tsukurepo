@@ -1,4 +1,4 @@
-package com.example.tsukurepo.data.ui.adapter
+package com.example.tsukurepo.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -28,7 +28,7 @@ class CurrentWeekAdapter(
     }
 
     override fun onBindViewHolder(holder: CurrentWeekViewHolder, position: Int) {
-        holder.itemView.findViewById<TextView>(R.id.item_date).text = list[position].startDate
+        holder.itemView.findViewById<TextView>(R.id.item_date).text = list[position].startDate.toString()
         holder.itemView.findViewById<TextView>(R.id.item_title).text = list[position].workDetails
         holder.itemView.findViewById<TextView>(R.id.item_edit_date).text = list[position].impression
         holder.itemView.setOnClickListener {

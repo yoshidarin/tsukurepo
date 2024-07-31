@@ -1,4 +1,4 @@
-package com.example.tsukurepo.data.ui.calender
+package com.example.tsukurepo.ui.calender
 
 import android.os.Bundle
 import android.util.Log
@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.tsukurepo.R
-import com.example.tsukurepo.data.ui.main.MainFragment
-import com.example.tsukurepo.data.ui.main.MainViewModel
+import com.example.tsukurepo.ui.main.MainFragment
+import com.example.tsukurepo.ui.main.MainViewModel
 
 class CalenderFragment : Fragment() {
 

@@ -1,4 +1,4 @@
-package com.example.tsukurepo.data.ui.main
+package com.example.tsukurepo.ui.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -7,6 +7,7 @@ import com.example.tsukurepo.data.repositories.ReportRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.util.Calendar
 import java.util.Date
 import javax.inject.Inject
 
@@ -23,13 +24,11 @@ class MainViewModel @Inject constructor(
             reportRepository.upsertData(
                 ReportEntity(
                     id = 0, // autoGenerate で自動的にIDを入れるときは0を入れる
-                    startDate = Date().time.toString(),
+                    startDate = Calendar.getInstance().time.toInstant(),
                     workDetails = "通常勤務",
                     impressions = "aiueo"
                 )
             )
         }
     }
-
-
 }

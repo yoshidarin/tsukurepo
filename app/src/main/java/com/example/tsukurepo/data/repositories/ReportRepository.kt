@@ -1,18 +1,18 @@
 package com.example.tsukurepo.data.repositories
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.switchMap
 import com.example.tsukurepo.data.ReportData
-import com.example.tsukurepo.data.ReportDatabase
 import com.example.tsukurepo.data.dao.ReportDao
+import com.example.tsukurepo.data.dao.WorkItemDao
 import com.example.tsukurepo.data.entities.ReportEntity
 import javax.inject.Inject
 
 
 class ReportRepository @Inject constructor(
-    private val reportDao: ReportDao
+    private val reportDao: ReportDao,
+    private val workItemDao: WorkItemDao
 ) {
 
     //report一覧を取得する

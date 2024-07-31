@@ -11,6 +11,9 @@
     <string name ="comment_change_title">コメントの変更</string>
     <string name="comment_change_announce">コメントを入力してください。</string>
     <string name="comment_sample">通常勤務</string>
+    <string name="work_details">業務内容</string>
+    <string name="impressions">所感</string>
+
     <!-- 作成画面 end -->
     <!-- 共通ボタン start -->
     <string name="cancel">キャンセル</string>
