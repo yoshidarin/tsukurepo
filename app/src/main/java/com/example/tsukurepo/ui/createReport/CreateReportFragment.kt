@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tsukurepo.R
+import com.example.tsukurepo.data.CreateReportData
+import com.example.tsukurepo.data.HeaderData
 import com.example.tsukurepo.data.ReportData
 import com.example.tsukurepo.data.WorkItemData
 import com.example.tsukurepo.ui.adapter.CreateReportAdapter
@@ -56,10 +58,11 @@ class CreateReportFragment : Fragment(){
 
     //RecyclerViewの生成時に一度だけ動く
 
-    private fun generateItemList(): List<WorkItemData> {
-        val itemList = mutableListOf<WorkItemData>()
-        itemList.add()
+    private fun generateItemList(): List<CreateReportData> {
+        val itemList = mutableListOf<CreateReportData>()
+        itemList.add(HeaderData(title = "タイトル！"))
         for (i in 1..7){
+            itemList.add(
                 WorkItemData(
                     id = i,
                     workDate = Calendar.getInstance().time.toInstant(),

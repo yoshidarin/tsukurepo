@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tsukurepo.R
+import com.example.tsukurepo.data.CreateReportData
 import com.example.tsukurepo.data.ReportData
 import com.example.tsukurepo.data.WorkItemData
 import com.example.tsukurepo.data.entities.toDateStr
@@ -13,30 +14,41 @@ import com.example.tsukurepo.data.entities.toStartTimeStr
 
 
 class CreateReportAdapter(
-    val list: List<WorkItemData>
+    val list: List<CreateReportData>
 
 
-) : RecyclerView.Adapter<CreateReportAdapter.CreateReportHolder>() {
+) : RecyclerView.Adapter<CreateReportAdapter.ParentViewHolder>() {
 
     enum class ListStyle(val type: Int){
         HeaderType(0),
         NormalType(1)
     }
-    class CreateReportHolder( itemView : View) : RecyclerView.ViewHolder(itemView) {
+    open class ParentViewHolder( itemView : View) : RecyclerView.ViewHolder(itemView) {
 
     }
+
+    class HeaderHolder(itemView: View):ParentViewHolder(itemView){
+        val titleTextView = itemView.findViewById<TextView>(R.id.work_item_header).text
+    }
+
+    class CreateReportHolder(itemView: View):ParentViewHolder(itemView){
+        val workDateText = itemView.findViewById<TextView>(R.id.work_date).text
+        val workStartTime = itemView.findViewById<TextView>(R.id.work_start_time).text
+        val workEndtTime = itemView.findViewById<TextView>(R.id.work_end_time).text
+    }
+
 
     interface ListListener {
         fun onClickItem(tappedView: View, workItemData: WorkItemData)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CreateReportHolder {
-        // TODO: レイアウトをtypeで分ける
-        return when(viewType){
+
+        when(viewType){
             // HeaderType
             ListStyle.HeaderType.type -> {
                 val view =  LayoutInflater.from(parent.context).inflate(R.layout.work_item_header_view, parent,false)
-                return CreateReportHolder(view)
+                HeaderHolder(view)
             }
             // NormalType
             else -> {
@@ -48,7 +60,9 @@ class CreateReportAdapter(
 
     }
 
-    override fun onBindViewHolder(holder: CreateReportHolder, position: Int) {
+    override fun onBindViewHolder(holder: ParentViewHolder, position: Int) {
+        val data = list[position]
+        // holderもdataもHeaderの場合
         holder.itemView.findViewById<TextView>(R.id.work_date).text = list[position].workDate.toDateStr()
         holder.itemView.findViewById<TextView>(R.id.work_start_time).text = list[position].startTime.toStartTimeStr()
         holder.itemView.findViewById<TextView>(R.id.work_end_time).text = list[position].endTime.toStartTimeStr()

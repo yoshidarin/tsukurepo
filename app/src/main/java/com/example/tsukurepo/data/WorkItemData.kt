@@ -9,4 +9,8 @@ data class WorkItemData(
     val endTime: Instant,
     val comment: String,
     val isHoliday: Boolean,
-)
+): CreateReportData()
+
+data class HeaderData(
+    val title: String,
+):CreateReportData(isHeader = true)
