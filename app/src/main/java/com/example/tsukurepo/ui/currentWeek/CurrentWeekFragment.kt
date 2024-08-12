@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tsukurepo.R
@@ -46,10 +47,13 @@ class CurrentWeekFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        this.currentWeekView = view.findViewById<RecyclerView>(R.id.fragment_current_week_view)
+        this.currentWeekView = view.findViewById(R.id.fragment_current_week_view)
         this.currentWeekView?.apply {
             setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(context)
+            val linearLayoutManager = LinearLayoutManager(context)
+            val dividerItemDecoration = DividerItemDecoration(context, linearLayoutManager.orientation)
+            addItemDecoration(dividerItemDecoration)
+            layoutManager = linearLayoutManager
             itemAnimator = DefaultItemAnimator()
             adapter = CurrentWeekAdapter(
                 generateItemList(),

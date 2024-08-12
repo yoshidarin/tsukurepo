@@ -2,16 +2,19 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="80dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            >
+    <FrameLayout
+        android:layout_width="72dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/item_date_day"
@@ -20,83 +23,66 @@
                 android:gravity="center"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                tools:text="14"
-                >
+                android:text="14"/>
 
-            </TextView>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="日"
-                android:textSize="16sp">
+                android:textSize="16sp"/>
+        </LinearLayout>
+    </FrameLayout>
 
-            </TextView>
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="288dp"
+    <FrameLayout
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:layout_weight="1">
+
         <TextView
             android:id="@+id/item_date"
             android:layout_width="match_parent"
             android:layout_height="15dp"
             android:layout_weight="1"
             tools:text="2024年4月14日"
-            android:textSize="12sp">
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_gravity="top"
+            android:layout_marginTop="8dp"/>
 
-        </TextView>
         <TextView
             android:id="@+id/item_title"
-            android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:layout_weight="2"
-            tools:text="週報"
-            android:gravity="center_vertical"
-            android:textSize="18sp">
-        </TextView>
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            tools:text="週報"
+            android:layout_gravity="center_vertical"
+            android:textSize="18sp"/>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-
-            >
+            android:layout_marginBottom="8dp">
             <ImageView
                 android:layout_width="12dp"
                 android:layout_height="12dp"
-                android:src="@drawable/ic_edit"
-
-                >
-            </ImageView>
+                android:src="@drawable/ic_edit" />
             <TextView
                 android:id="@+id/item_edit_date"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 tools:text="2024年4月20日 19:30"
-                android:gravity="center_vertical"
                 android:textColor="#565656"
-                android:textSize="8sp">
+                android:textSize="8sp"/>
 
-            </TextView>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/warning"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            >
-        </ImageView>
-
-
-
-
+        </FrameLayout>
+    </FrameLayout>
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/warning"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="16dp"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
