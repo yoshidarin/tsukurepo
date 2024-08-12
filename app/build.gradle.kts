@@ -59,6 +59,8 @@ dependencies {
     annotationProcessor("androidx.room:room-compiler:2.5.2")
     kapt("androidx.room:room-compiler:2.5.2")
 
+    // recysler view
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
     implementation("androidx.activity:activity-ktx:1.4.0")
     implementation("androidx.fragment:fragment-ktx:1.4.1")

@@ -18,41 +18,7 @@
 
         </androidx.recyclerview.widget.RecyclerView>
 
-        <TextView
-            android:background="@color/secondary_color"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/work_details"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            >
-        </TextView>
-        <EditText
-            android:id="@+id/work_details_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            tools:text="aiueo"
-            android:inputType="textMultiLine"/>
 
-        <TextView
-            android:background="@color/secondary_color"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/impressions"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            />
-
-        <EditText
-            android:id="@+id/impression_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            tools:text="今週もよろしくお願いいたします。"
-            android:inputType="textMultiLine"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

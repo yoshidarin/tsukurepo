@@ -4,22 +4,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tsukurepo.R
 import com.example.tsukurepo.data.CreateReportData
+import com.example.tsukurepo.data.FooterData
 import com.example.tsukurepo.data.HeaderData
 import com.example.tsukurepo.data.ReportData
 import com.example.tsukurepo.data.WorkItemData
 import com.example.tsukurepo.ui.adapter.CreateReportAdapter
+import com.example.tsukurepo.ui.adapter.CreateReportFooterAdapter
 import java.util.Calendar
 
 class CreateReportFragment : Fragment(){
 
     private lateinit var createReportRecyclerView: RecyclerView
-    private lateinit var workDetailsEditText: EditText
-    private lateinit var impressionEditText: EditText
 
     companion object {
         fun newInstance() = CreateReportFragment()
@@ -37,15 +37,19 @@ class CreateReportFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         createReportRecyclerView = view.findViewById(R.id.create_report_recycler_view)
-        workDetailsEditText = view.findViewById(R.id.work_details_text)
-        impressionEditText = view.findViewById(R.id.impression_text)
 
-
+        val concatAdapter = ConcatAdapter().apply {
+            // CreateReportAdapterを追加
+            addAdapter(CreateReportAdapter(generateItemList()))
+            // フッターのAdapterを追加
+            // TODO: 入力済みのデータがあればここで設定する
+            addAdapter(CreateReportFooterAdapter(FooterData("", "")))
+        }
         // RecyclerViewの設定
         createReportRecyclerView.apply {
             setHasFixedSize(true)
             layoutManager = CreateReportLayoutManager(requireContext())
-            adapter = CreateReportAdapter(generateItemList())
+            adapter = concatAdapter
         }
     }
     //RecyclerViewの生成時に一度だけ動く
